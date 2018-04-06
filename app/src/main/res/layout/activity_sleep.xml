@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="42dp"
+                    android:text="睡眠"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView28"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_toLeftOf="@+id/yesteday"
+                    android:layout_toStartOf="@+id/yesteday"
+                    android:text="上次睡眠："
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/yesteday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/textView29"
+                    android:layout_centerHorizontal="true"
+                    android:text="暂无数据"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/start"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView29"
+                    android:layout_marginTop="33dp"
+                    android:layout_toLeftOf="@+id/textView28"
+                    android:layout_toStartOf="@+id/textView28"
+                    android:background="@drawable/btn_border"
+                    android:text="开始睡眠计时" />
+
+                <Button
+                    android:id="@+id/end"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/start"
+                    android:layout_alignBottom="@+id/start"
+                    android:layout_toEndOf="@+id/textView28"
+                    android:layout_toRightOf="@+id/textView28"
+                    android:background="@drawable/btn_border"
+                    android:text="结束计时" />
+
+                <TableLayout
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView34"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/shape_round">
+
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView29"
+                    android:layout_alignStart="@+id/textView29"
+                    android:layout_below="@+id/start"
+                    android:layout_marginTop="37dp"
+                    android:text="历史数据："
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

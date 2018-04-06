@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="41dp"
+                    android:text="饮水量"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/suggest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView18"
+                    android:layout_alignRight="@+id/textView18"
+                    android:layout_below="@+id/textView18"
+                    android:layout_marginTop="37dp"
+                    android:text="建议饮水量：暂无数据"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/real"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/suggest"
+                    android:layout_alignStart="@+id/suggest"
+                    android:layout_below="@+id/suggest"
+                    android:layout_marginTop="28dp"
+                    android:text="今日饮水量：登陆后使用"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/real"
+                    android:layout_alignStart="@+id/real"
+                    android:layout_below="@+id/real"
+                    android:layout_marginTop="30dp"
+                    android:text="添加饮水："
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ml"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView30"
+                    android:layout_alignBottom="@+id/textView30"
+                    android:layout_alignLeft="@+id/textView18"
+                    android:layout_alignStart="@+id/textView18"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView31"
+                    android:layout_alignBottom="@+id/textView31"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
+                    android:layout_toEndOf="@+id/textView31"
+                    android:layout_toRightOf="@+id/textView31"
+                    android:background="@drawable/btn_border"
+                    android:text="添加" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/ml"
+                    android:layout_alignBottom="@+id/ml"
+                    android:layout_toEndOf="@+id/ml"
+                    android:layout_toRightOf="@+id/ml"
+                    android:text="ml"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView30"
+                    android:layout_alignStart="@+id/textView30"
+                    android:layout_below="@+id/textView30"
+                    android:layout_marginTop="30dp"
+                    android:text="今日饮水记录："
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@drawable/shape_round"></TableLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
