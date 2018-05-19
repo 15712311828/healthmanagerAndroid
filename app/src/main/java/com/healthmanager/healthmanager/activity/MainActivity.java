@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.healthmanager.healthmanager.R;
+import com.healthmanager.healthmanager.common.StepCounter;
 import com.healthmanager.healthmanager.util.HttpUtil;
 
 import org.json.JSONObject;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout userView;
     private LinearLayout healthView;
     private LinearLayout runView;
+
+    StepCounter stepCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                         return userView;
                     }
                 }));
+
+        stepCounter = new StepCounter(this);
     }
 
     @Override
@@ -90,6 +96,13 @@ public class MainActivity extends AppCompatActivity {
                         isUserInit = true;
                     }
                 }
+                else if(tabId.equals("run")){
+                    if(!isRunInit) {
+                        initRunView();
+                        isRunInit = true;
+                    }
+                }
+
             }
         });
     }
@@ -193,5 +206,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void initRunView(){
+        runView.removeAllViews();
+        View view= LayoutInflater.from(MainActivity.this).inflate(R.layout.tag_running,null);
+        runView.addView(view);
+        HttpUtil.postJsonAsync("http://140.143.209.108:8080/HealthManager/running/getToday", null, new HttpUtil.CallBack() {
+            @Override
+            public void call(JSONObject result) throws Exception {
+                if (result.getInt("status") == 0) {
+                    TextView textView=findViewById(R.id.step);
+                    textView.setText("今日步数："+result.getInt("data"));
+                }
+            }
+        },this);
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        stepCounter.stop();
     }
 }
